@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
   <title>Buscador Rick and Morty</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <h1>Buscador de Personajes Rick and Morty</h1>
-  <div class="buscador">
-    <input type="text" id="busqueda" placeholder=" Rick and Morty api...">
-    <button onclick="buscar()">Buscar</button>
-  </div>
-  <p id="mensaje"></p>
-  <div id="resultados"></div>
+  <header class="header">
+    <h1>Buscador de Personajes</h1>
+    <p class="subtitle">Explora el universo de Rick and Morty</p>
+  </header>
+
+  <main class="container">
+
+    <section class="buscador">
+      <input 
+        type="text" 
+        id="busqueda" 
+        placeholder="Ej: Rick, Morty, Summer..."
+        aria-label="Buscar personaje"
+      >
+      <button id="btnBuscar">Buscar</button>
+    </section>
+
+    <p id="mensaje" class="mensaje"></p>
+
+    <section id="resultados" class="resultados"></section>
+
+  </main>
 
   <script src="script/script.js"></script>
 </body>
