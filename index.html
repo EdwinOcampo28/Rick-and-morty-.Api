@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b20">
+  <meta name="description" content="Explora personajes del universo de Rick and Morty usando la API pública.">
+  <title>Rick & Morty | Explorador del multiverso</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="hero">
+    <div class="brand-mark" aria-hidden="true">R&M</div>
+    <p class="eyebrow">ARCHIVO INTERDIMENSIONAL</p>
+    <h1>Explora el <span>multiverso</span></h1>
+    <p class="hero-copy">Busca personajes, descubre sus mundos y encuentra tu próxima anomalía favorita.</p>
+    <div class="api-status"><span class="status-dot"></span> Base de datos de personajes</div>
+  </header>
+
+  <main class="container">
+    <section class="search-panel" aria-label="Buscar y filtrar personajes">
+      <form id="searchForm" class="search-form">
+        <label class="sr-only" for="busqueda">Nombre del personaje</label>
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="busqueda" name="name" type="search" placeholder="Busca a Rick, Morty, Summer…" autocomplete="off" maxlength="80">
+        <button class="primary-button" type="submit">Buscar <span aria-hidden="true">↗</span></button>
+      </form>
+      <div class="filters">
+        <label>Estado
+          <select id="estado">
+            <option value="">Todos</option><option value="alive">Vivo</option><option value="dead">Muerto</option><option value="unknown">Desconocido</option>
+          </select>
+        </label>
+        <label>Género
+          <select id="genero">
+            <option value="">Todos</option><option value="female">Femenino</option><option value="male">Masculino</option><option value="genderless">Sin género</option><option value="unknown">Desconocido</option>
+          </select>
+        </label>
+        <button id="limpiar" class="quiet-button" type="button">Limpiar filtros</button>
+      </div>
+    </section>
+
+    <section class="results-heading" aria-live="polite">
+      <div><p class="eyebrow">REGISTROS ENCONTRADOS</p><h2 id="tituloResultados">Personajes del multiverso</h2></div>
+      <p id="contador" class="count-pill">Listo para explorar</p>
+    </section>
+
+    <div id="loader" class="loading hidden" role="status"><span class="spinner"></span><p>Consultando el multiverso…</p></div>
+    <div id="mensaje" class="message hidden" role="status"></div>
+    <section id="resultados" class="results-grid" aria-label="Resultados de personajes"></section>
+
+    <nav id="paginacion" class="pagination hidden" aria-label="Paginación de resultados">
+      <button id="anterior" class="page-button" type="button">← Anterior</button>
+      <span id="paginaActual">Página 1</span>
+      <button id="siguiente" class="page-button" type="button">Siguiente →</button>
+    </nav>
+  </main>
+  <footer><span>RICK & MORTY EXPLORER</span><span>Datos proporcionados por la API pública de Rick and Morty</span></footer>
+</body>
+</html>
